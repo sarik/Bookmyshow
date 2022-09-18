@@ -57,7 +57,7 @@ public class BookmyshowApplication implements CommandLineRunner {
        }
 
        catch(Exception e){
-           System.out.println("Found following issue");
+           //System.out.println("Found following issue");
            e.printStackTrace();
        }
 
