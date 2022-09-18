@@ -17,7 +17,7 @@ public class Counter {
         this.setCount(this.getCount()+value);
     }
 
-    public  synchronized void subtractValue(int value){
+    public synchronized  void subtractValue(int value){
         //this.count-=1;
         this.setCount(this.getCount()-value);
     }

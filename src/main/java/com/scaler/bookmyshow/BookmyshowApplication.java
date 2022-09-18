@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
 public class BookmyshowApplication implements CommandLineRunner {
@@ -43,7 +44,7 @@ public class BookmyshowApplication implements CommandLineRunner {
 //        t1.join();
 //        t2.join();
 
-        System.out.println(counter.getCount());
+        //System.out.println(counter.getCount());
 
         ExecutorService executorService = Executors.newFixedThreadPool(2);
 
@@ -61,9 +62,13 @@ public class BookmyshowApplication implements CommandLineRunner {
            e.printStackTrace();
        }
 
-        System.out.println("counter value"+ counter.getCount());
+        System.out.println("counter value::"+ counter.getCount());
         System.out.println("Main function done");
 
+        //executorService.shutdown();
+        //if(!executorService.awaitTermination(100, TimeUnit.SECONDS)) {
+            executorService.shutdownNow();
+        //}
 
 
 
